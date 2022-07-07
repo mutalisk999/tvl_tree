@@ -103,7 +103,7 @@ class TvlTree(object):
                 accumulative_tvl = node_tvl
             else:
                 accumulative_tvl = node_tvl + sum(
-                    [calc_node_accumulative_tvl(node.user_addr_biz) for node in v.children_nodes])
+                    [calc_node_accumulative_tvl(node.user_addr_biz, _user_addr_to_tvl_map) for node in v.children_nodes])
 
             # 记入tree_node和缓存
             v.accumulative_tvl = accumulative_tvl
