@@ -58,7 +58,8 @@ class TvlTree(object):
         for data in _batch_data:
             if parent_to_user_map.get(data[1]) is None:
                 parent_to_user_map[data[1]] = [data[0]]
-            parent_to_user_map[data[1]].append(data[0])
+            else:
+                parent_to_user_map[data[1]].append(data[0])
 
         # 从 parent_addr 为 root开始
         v = parent_to_user_map.get("root")
